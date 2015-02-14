@@ -75,12 +75,12 @@ When the vending machine's products and change are empty, a maintenance man is i
 
 ```ruby
 maintenance_man = MaintenanceMan.new vending_machine
-maintenance_man.stock_vending_machine [Product.new("Chocolate", 50), Product.new("Water", 100)]
+maintenance_man.stock_vending_machine with:[Product.new("Chocolate", 50), Product.new("Water", 100)]
 
 vending_machine.products
 #=> [#<Product:0x007f993ac8f020 @name="Chocolate", @price=50>, #<Product:0x007f993ac8ef80 @name="Water", @price=100>]
 
-maintenance_man.refill_coin_box {50 => 1, 100 => 1, 200 => 1}
+maintenance_man.refill_coin_box with:{50 => 1, 100 => 1, 200 => 1}
 vending_machine.total_money
 #=> {50=>1, 200=>2, 100=>2} 
 ```
